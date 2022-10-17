@@ -1,0 +1,96 @@
+:root {
+  --primary-color: #3d91b7;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  font-family: sans-serif;
+  background-color: var(--primary-color);
+  padding: 15px;
+}
+
+header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+header h1,
+nav ul > li {
+  display: inline-block;
+}
+
+header h1 a {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+header nav a {
+  padding: 15px;
+  font-weight: 600;
+}
+
+header nav a:hover,
+.dropdown:hover > a {
+  background-color: rgba(255, 255, 255, 0.203);
+  color: rgb(7, 7, 171);
+}
+
+nav {
+  float: right;
+  margin-top: 10px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dropdown > a {
+  color: white !important;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-1 {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 0px 2px gray;
+  top: 100px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-1 {
+  top: 32px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-1 li {
+  display: block;
+  min-width: 200px;
+  margin: 15px;
+}
+
+.dropdown-1 a {
+  color: black;
+}
+
+.dropdown-1 a:hover {
+  color: var(--primary-color);
+}
