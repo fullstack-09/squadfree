@@ -1,5 +1,20 @@
 :root {
   --primary-color: #3d91b7;
+  --title-color: #2f4d5a;
+  --paragraph-color: #959595;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-family: sans-serif;
+}
+
+h2,
+h3 {
+  color: var(--title-color);
 }
 
 * {
@@ -11,7 +26,11 @@
 header {
   font-family: sans-serif;
   background-color: var(--primary-color);
+  /* background-color: transparent; */
   padding: 15px;
+  position: absolute;
+  width: 100%;
+  top: 0;
 }
 
 header::after {
@@ -93,4 +112,228 @@ nav {
 
 .dropdown-1 a:hover {
   color: var(--primary-color);
+}
+
+/* --------------Banner----------- */
+
+.welcome {
+  height: 100vh;
+  background: linear-gradient(#3089a95b, #3089a953), url("./img/hero-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.hero {
+  padding-top: 17%;
+  color: white;
+  font-family: sans-serif;
+  animation: slideTop 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  text-shadow: -1px -1px 2px rgba(0, 0, 0, 0.541);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-shadow: -1px -1px 2px rgba(0, 0, 0, 0.541);
+  margin: 5px 0;
+}
+
+.hero a {
+  font-size: 2.3rem;
+  font-weight: 600;
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 10px;
+  margin-top: 50px;
+  transition: all 0.3s;
+}
+
+.hero a:hover {
+  padding-top: 15px;
+  background-color: rgba(255, 255, 255, 0.227);
+}
+
+@keyframes slideTop {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  top {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------About--------------- */
+#about {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.458),
+      rgba(255, 255, 255, 0.492)
+    ),
+    url("./img/about-bg.jpg");
+  /* height: 50vh; */
+  background-size: cover;
+  padding: 60px;
+}
+
+#about .main-container {
+  display: flex;
+  gap: 5%;
+}
+
+.main-container .first-item {
+  width: 35%;
+}
+.main-container .first-item h2 {
+  font-size: 2.3rem;
+  margin: 20px 0;
+}
+
+.main-container .first-item p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  line-height: 30px;
+  text-align: justify;
+}
+
+#about a {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+}
+
+.main-container .second-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+  row-gap: 50px;
+  justify-content: space-around;
+}
+
+.main-container .item {
+  width: 45%;
+}
+
+.main-container .second-item i {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+.main-container .second-item h3 {
+  font-size: 1.7rem;
+  margin: 10px 0;
+}
+
+.main-container .second-item p {
+  font-size: 1.1rem;
+  line-height: 25px;
+  text-align: justify;
+  color: rgb(93, 93, 93);
+}
+
+/* -----------Service------------ */
+
+.section-title {
+  text-align: center;
+  background: url("./img/section-title-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 30px 0;
+  font-size: 2rem;
+}
+
+#service {
+  padding: 10px 60px 60px;
+}
+
+#service > p {
+  text-align: center;
+  margin: 10px 0 30px;
+  line-height: 25px;
+  color: var(--paragraph-color);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-item > h3 {
+  margin: 10px 0;
+  color: var(--title-color);
+}
+
+.flex-item > p {
+  margin: 10px 0;
+  line-height: 25px;
+  color: var(--paragraph-color);
+}
+
+.flex-item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 10px rgba(175, 176, 176, 0.561);
+  width: 23%;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.slide-top4 {
+  animation: slideTop 2s ease-in;
+}
+.slide-top3 {
+  animation: slideTop 1.6s ease-in;
+}
+.slide-top2 {
+  animation: slideTop 1.3s ease-in;
+}
+.slide-top1 {
+  animation: slideTop 1s ease-in;
+}
+
+#service i {
+  color: var(--primary-color);
+  font-size: 3rem;
+  transition: all 1s;
+}
+
+.flex-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  z-index: -1;
+  transition: all 0.5s;
+  /* border-radius: 10px; */
+  background-color: var(--primary-color);
+}
+
+.flex-item:hover::after {
+  right: 0;
+  top: 0;
+}
+
+.flex-item:hover i {
+  color: white !important;
+}
+
+.flex-item:hover h3,
+.flex-item:hover p {
+  color: white !important;
 }
