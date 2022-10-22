@@ -4,6 +4,10 @@
   --paragraph-color: #959595;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -28,7 +32,7 @@ header {
   background-color: var(--primary-color);
   /* background-color: transparent; */
   padding: 15px;
-  position: absolute;
+  position: sticky;
   width: 100%;
   top: 0;
 }
@@ -336,4 +340,18 @@ nav {
 .flex-item:hover h3,
 .flex-item:hover p {
   color: white !important;
+}
+
+.scroll-to-top {
+  background-color: var(--primary-color);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.3rem;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
